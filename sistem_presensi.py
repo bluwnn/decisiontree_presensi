@@ -188,3 +188,75 @@ def tambah_mahasiswa():
 
   print(Fore.YELLOW + f"Status     : {status}")
   print(Fore.YELLOW + f"Keterangan : {keterangan}")
+
+
+# =========================================================
+# MENCARI MAHASISWA
+# =========================================================
+
+def cari_mahasiswa():
+
+    print(Fore.CYAN + "\n🔍 CARI MAHASISWA")
+    print(Fore.CYAN + "-" * 35)
+
+    keyword = input("Masukkan nama mahasiswa : ")
+
+    ditemukan = False
+
+    for data in mahasiswa:
+
+        if keyword.lower() in data["nama"].lower():
+
+            status, keterangan = klasifikasi_mahasiswa(
+                data["kehadiran"],
+                data["tugas"]
+            )
+
+            print(Fore.GREEN + "\n✅ Data ditemukan")
+            print("-" * 35)
+
+            print(f"Nama        : {data['nama']}")
+            print(f"Kehadiran   : {data['kehadiran']}")
+            print(f"Tugas       : {data['tugas']}")
+            print(f"Status      : {status}")
+            print(f"Keterangan  : {keterangan}")
+
+            ditemukan = True
+
+    if not ditemukan:
+        print(Fore.RED + "\n❌ Mahasiswa tidak ditemukan")
+# =========================================================
+# MENCARI MAHASISWA
+# =========================================================
+
+def cari_mahasiswa():
+
+    print(Fore.CYAN + "\n🔍 CARI MAHASISWA")
+    print(Fore.CYAN + "-" * 35)
+
+    keyword = input("Masukkan nama mahasiswa : ")
+
+    ditemukan = False
+
+    for data in mahasiswa:
+
+        if keyword.lower() in data["nama"].lower():
+
+            status, keterangan = klasifikasi_mahasiswa(
+                data["kehadiran"],
+                data["tugas"]
+            )
+
+            print(Fore.GREEN + "\n✅ Data ditemukan")
+            print("-" * 35)
+
+            print(f"Nama        : {data['nama']}")
+            print(f"Kehadiran   : {data['kehadiran']}")
+            print(f"Tugas       : {data['tugas']}")
+            print(f"Status      : {status}")
+            print(f"Keterangan  : {keterangan}")
+
+            ditemukan = True
+
+    if not ditemukan:
+        print(Fore.RED + "\n❌ Mahasiswa tidak ditemukan")  
