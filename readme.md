@@ -148,3 +148,13 @@ Program ini dibuat untuk mempelajari:
 - penggunaan looping
 - penggunaan list dan dictionary
 - pembuatan terminal interaktif Python
+
+---
+
+# 🎮 Demo Singkat Program
+
+<video
+  src="https://github.com/user-attachments/assets/17d56bb2-fa4d-4bde-abc0-3d60fd26c4c6"
+  controls
+  widt="700">
+</video>
