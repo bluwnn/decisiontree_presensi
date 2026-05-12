@@ -100,3 +100,55 @@ def tampilkan_menu():
     print("3. 🔍 Cari Mahasiswa")
     print("4. 📊 Statistik Mahasiswa")
     print("5. ⬅️ Keluar")
+
+# =========================================================
+# MENAMPILKAN DATA MAHASISWA
+# =========================================================
+
+def tampilkan_data():
+
+  table = Table(
+    title="📋 DATA MAHASISWA",
+    show_lines=True,
+    header_style="bold cyan"
+  )
+
+  # Header kolom
+  table.add_column("Nama", style="white", justify="left")
+  table.add_column("Kehadiran", justify="center")
+  table.add_column("Tugas", justify="center")
+  table.add_column("Status", justify="center")
+  table.add_column("Keterangan", justify="center")
+
+  # Menampilkan data mahasiswa
+  for data in mahasiswa:
+
+    # Menentukan status dan keterangan otomatis
+    status, keterangan = klasifikasi_mahasiswa(
+        data["kehadiran"],
+        data["tugas"]
+    )
+
+    # Warna status
+    if status == "Aktif":
+        status_warna = "[green]Aktif[/green]"
+    else:
+        status_warna = "[red]Tidak Aktif[/red]"
+
+    # Warna keterangan
+    if keterangan == "Mahasiswa Disiplin":
+        ket_warna = "[yellow]Mahasiswa Disiplin[/yellow]"
+    else:
+        ket_warna = "[white]Perlu Peningkatan[/white]"
+
+    # Tambahkan row ke tabel
+    table.add_row(
+        data["nama"],
+        data["kehadiran"],
+        data["tugas"],
+        status_warna,
+        ket_warna
+    )
+
+console.print(Table)
+
