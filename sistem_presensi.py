@@ -294,3 +294,62 @@ def statistik():
     print(Fore.GREEN + f"Jumlah Mahasiswa Aktif         : {aktif}")
     print(Fore.RED + f"Jumlah Mahasiswa Tidak Aktif   : {tidak_aktif}")
     print(Fore.YELLOW + f"Jumlah Mahasiswa Disiplin      : {disiplin}")
+
+# =========================================================
+# PROGRAM UTAMA
+# =========================================================
+
+while True:
+
+    tampilkan_header()
+    tampilkan_menu()
+
+    pilihan = input(
+        Fore.CYAN + "\nPilih menu (1-5) : "
+    )
+
+    # =====================================================
+    # MENU 1 - LIHAT DATA
+    # =====================================================
+
+    if pilihan == "1":
+        tampilkan_data()
+
+    # =====================================================
+    # MENU 2 - TAMBAH MAHASISWA
+    # =====================================================
+
+    elif pilihan == "2":
+        tambah_mahasiswa()
+
+    # =====================================================
+    # MENU 3 - CARI MAHASISWA
+    # =====================================================
+
+    elif pilihan == "3":
+        cari_mahasiswa()
+
+    # =====================================================
+    # MENU 4 - STATISTIK
+    # =====================================================
+
+    elif pilihan == "4":
+        statistik()
+
+    # =====================================================
+    # MENU 5 - KELUAR
+    # =====================================================
+
+    elif pilihan == "5":
+
+        print(Fore.CYAN + "\n👋 Program selesai. Terima kasih!")
+        break
+
+    # =====================================================
+    # INPUT TIDAK VALID
+    # =====================================================
+
+    else:
+        print(Fore.RED + "\n❌ Pilihan tidak valid!")
+
+    input(Fore.MAGENTA + "\nTekan ENTER untuk kembali ke menu...")
