@@ -23,31 +23,31 @@ console = Console()
 # =========================================================
 
 mahasiswa = [
-    {
-        "nama": "Andi",
-        "kehadiran": "Tinggi",
-        "tugas": "Lengkap"
-    },
-    {
-        "nama": "Budi",
-        "kehadiran": "Rendah",
-        "tugas": "Tidak Lengkap"
-    },
-    {
-        "nama": "Citra",
-        "kehadiran": "Tinggi",
-        "tugas": "Tidak Lengkap"
-    },
-    {
-        "nama": "Deni",
-        "kehadiran": "Rendah",
-        "tugas": "Lengkap"
-    },
-    {
-        "nama": "Rina",
-        "kehadiran": "Tinggi",
-        "tugas": "Lengkap"
-    }
+  {
+      "nama": "Andi",
+      "kehadiran": "Tinggi",
+      "tugas": "Lengkap"
+  },
+  {
+      "nama": "Budi",
+      "kehadiran": "Rendah",
+      "tugas": "Tidak Lengkap"
+  },
+  {
+      "nama": "Citra",
+      "kehadiran": "Tinggi",
+      "tugas": "Tidak Lengkap"
+  },
+  {
+      "nama": "Deni",
+      "kehadiran": "Rendah",
+      "tugas": "Lengkap"
+  },
+  {
+      "nama": "Rina",
+      "kehadiran": "Tinggi",
+      "tugas": "Lengkap"
+  }
 ]
 
 # =========================================================
@@ -55,24 +55,24 @@ mahasiswa = [
 # =========================================================
 
 def klasifikasi_mahasiswa(kehadiran, tugas):
-    """
-    Menentukan status dan keterangan mahasiswa
-    menggunakan IF-ELSE sebagai simulasi Decision Tree
-    """
+  """
+  Menentukan status dan keterangan mahasiswa
+  menggunakan IF-ELSE sebagai simulasi Decision Tree
+  """
 
-    # Menentukan status
-    if kehadiran.lower() == "tinggi":
-        status = "Aktif"
-    else:
-        status = "Tidak Aktif"
+  # Menentukan status
+  if kehadiran.lower() == "tinggi":
+      status = "Aktif"
+  else:
+      status = "Tidak Aktif"
 
-    # Menentukan keterangan
-    if kehadiran.lower() == "tinggi" and tugas.lower() == "lengkap":
-        keterangan = "Mahasiswa Disiplin"
-    else:
-        keterangan = "Perlu Peningkatan"
+  # Menentukan keterangan
+  if kehadiran.lower() == "tinggi" and tugas.lower() == "lengkap":
+      keterangan = "Mahasiswa Disiplin"
+  else:
+      keterangan = "Perlu Peningkatan"
 
-    return status, keterangan
+  return status, keterangan
 
 
 # =========================================================
@@ -81,9 +81,9 @@ def klasifikasi_mahasiswa(kehadiran, tugas):
 
 def tampilkan_header():
 
-    print(Fore.CYAN + "=" * 72)
-    print(Fore.CYAN + "🎓 SISTEM PRESENSI MAHASISWA 🎓".center(72))
-    print(Fore.CYAN + "=" * 72)
+  print(Fore.CYAN + "=" * 72)
+  print(Fore.CYAN + "🎓 SISTEM PRESENSI MAHASISWA 🎓".center(72))
+  print(Fore.CYAN + "=" * 72)
 
 
 # =========================================================
@@ -92,14 +92,14 @@ def tampilkan_header():
 
 def tampilkan_menu():
 
-    print(Fore.CYAN + "\n📌 MENU PROGRAM")
-    print(Fore.CYAN + "-" * 35)
+  print(Fore.CYAN + "\n📌 MENU PROGRAM")
+  print(Fore.CYAN + "-" * 35)
 
-    print("1. 📋 Lihat Data Mahasiswa")
-    print("2. ➕ Tambah Mahasiswa")
-    print("3. 🔍 Cari Mahasiswa")
-    print("4. 📊 Statistik Mahasiswa")
-    print("5. ⬅️ Keluar")
+  print("1. 📋 Lihat Data Mahasiswa")
+  print("2. ➕ Tambah Mahasiswa")
+  print("3. 🔍 Cari Mahasiswa")
+  print("4. 📊 Statistik Mahasiswa")
+  print("5. ⬅️ Keluar")
 
 # =========================================================
 # MENAMPILKAN DATA MAHASISWA
@@ -152,3 +152,39 @@ def tampilkan_data():
 
 console.print(Table)
 
+# =========================================================
+# MENAMBAHKAN DATA MAHASISWA
+# =========================================================
+
+def tambah_mahasiswa():
+
+  print(Fore.CYAN + "\n➕ TAMBAH MAHASISWA")
+  print(Fore.CYAN + "-" * 35)
+
+  nama = input("Masukkan Nama : ")
+
+  kehadiran = input(
+      "Masukkan Kehadiran (Tinggi/Rendah) : "
+  )
+
+  tugas = input(
+      "Masukkan Tugas (Lengkap/Tidak Lengkap) : "
+  )
+
+  # Menambahkan data baru
+  mahasiswa.append({
+      "nama": nama,
+      "kehadiran": kehadiran,
+      "tugas": tugas
+  })
+
+  # Klasifikasi otomatis
+  status, keterangan = klasifikasi_mahasiswa(
+      kehadiran,
+      tugas
+  )
+
+  print(Fore.GREEN + "\n✅ Data mahasiswa berhasil ditambahkan!")
+
+  print(Fore.YELLOW + f"Status     : {status}")
+  print(Fore.YELLOW + f"Keterangan : {keterangan}")
