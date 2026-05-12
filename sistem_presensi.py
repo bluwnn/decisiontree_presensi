@@ -75,3 +75,28 @@ def klasifikasi_mahasiswa(kehadiran, tugas):
     return status, keterangan
 
 
+# =========================================================
+# HEADER PROGRAM
+# =========================================================
+
+def tampilkan_header():
+
+    print(Fore.CYAN + "=" * 72)
+    print(Fore.CYAN + "🎓 SISTEM PRESENSI MAHASISWA 🎓".center(72))
+    print(Fore.CYAN + "=" * 72)
+
+
+# =========================================================
+# MENU PROGRAM
+# =========================================================
+
+def tampilkan_menu():
+
+    print(Fore.CYAN + "\n📌 MENU PROGRAM")
+    print(Fore.CYAN + "-" * 35)
+
+    print("1. 📋 Lihat Data Mahasiswa")
+    print("2. ➕ Tambah Mahasiswa")
+    print("3. 🔍 Cari Mahasiswa")
+    print("4. 📊 Statistik Mahasiswa")
+    print("5. ⬅️ Keluar")
