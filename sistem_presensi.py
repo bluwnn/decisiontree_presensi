@@ -260,3 +260,37 @@ def cari_mahasiswa():
 
     if not ditemukan:
         print(Fore.RED + "\n❌ Mahasiswa tidak ditemukan")  
+
+# =========================================================
+# STATISTIK MAHASISWA
+# =========================================================
+
+def statistik():
+
+    aktif = 0
+    tidak_aktif = 0
+    disiplin = 0
+
+    for data in mahasiswa:
+
+        status, keterangan = klasifikasi_mahasiswa(
+            data["kehadiran"],
+            data["tugas"]
+        )
+
+        # Hitung status aktif
+        if status == "Aktif":
+            aktif += 1
+        else:
+            tidak_aktif += 1
+
+        # Hitung mahasiswa disiplin
+        if keterangan == "Mahasiswa Disiplin":
+            disiplin += 1
+
+    print(Fore.CYAN + "\n📊 STATISTIK MAHASISWA")
+    print(Fore.CYAN + "-" * 35)
+
+    print(Fore.GREEN + f"Jumlah Mahasiswa Aktif         : {aktif}")
+    print(Fore.RED + f"Jumlah Mahasiswa Tidak Aktif   : {tidak_aktif}")
+    print(Fore.YELLOW + f"Jumlah Mahasiswa Disiplin      : {disiplin}")
