@@ -49,3 +49,29 @@ mahasiswa = [
         "tugas": "Lengkap"
     }
 ]
+
+# =========================================================
+# FUNGSI DECISION TREE SEDERHANA MENGGUNAKAN IF-ELSE
+# =========================================================
+
+def klasifikasi_mahasiswa(kehadiran, tugas):
+    """
+    Menentukan status dan keterangan mahasiswa
+    menggunakan IF-ELSE sebagai simulasi Decision Tree
+    """
+
+    # Menentukan status
+    if kehadiran.lower() == "tinggi":
+        status = "Aktif"
+    else:
+        status = "Tidak Aktif"
+
+    # Menentukan keterangan
+    if kehadiran.lower() == "tinggi" and tugas.lower() == "lengkap":
+        keterangan = "Mahasiswa Disiplin"
+    else:
+        keterangan = "Perlu Peningkatan"
+
+    return status, keterangan
+
+
